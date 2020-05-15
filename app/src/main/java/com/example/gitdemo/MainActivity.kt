@@ -4,37 +4,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private var number = 0
+    lateinit var viewModel: MyViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        number=savedInstanceState?.getInt("NUMBER")?:0
-        textView.text="$number"
+        viewModel=ViewModelProvider(this).get(MyViewModel::class.java)
+        viewModel.number.observe(this, Observer {
+            textView.text="${viewModel.number.value}"
+        })
         button.setOnClickListener {
-            textView.text="${++number}"
+           viewModel.add(1)
         }
         button2.setOnClickListener {
-            textView.text="${--number}"
+            viewModel.add(-1)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.reset) {
-            number = 0
-            textView.text="${number}"
+            viewModel.resetData()
         }
         return super.onOptionsItemSelected(item)
-    }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt("NUMBER",number)
     }
 }
