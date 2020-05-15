@@ -13,5 +13,8 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             textView.text="${++number}"
         }
+        button2.setOnClickListener {
+            textView.text="${--number}"
+        }
     }
 }
