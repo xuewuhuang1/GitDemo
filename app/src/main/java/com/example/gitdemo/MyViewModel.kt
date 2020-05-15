@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MyViewModel:ViewModel() {
-    val _number = MutableLiveData(0)
+    private val _number = MutableLiveData(0)
     val number:LiveData<Int>
         get() = _number
     fun add(n:Int){
