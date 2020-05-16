@@ -35,12 +35,7 @@ class MainActivity : AppCompatActivity() {
     //zzzzz
     //this new
     //new dev
-//另外地方增加的
-<<<<<<< HEAD
-=======
-    //修改了一下
-    //再一次修改
->>>>>>> 3ef790ef165d93410774b6c957a57a37762309e4
 //base tset
+//basexiugai
 }
 
