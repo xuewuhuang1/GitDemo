@@ -1,4 +1,4 @@
-package com.example.gitdemo
+﻿package com.example.gitdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,5 +35,6 @@ class MainActivity : AppCompatActivity() {
     //zzzzz
     //this new
     //new dev
+//另外地方增加的
 }
 
