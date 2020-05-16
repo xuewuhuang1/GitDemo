@@ -36,5 +36,6 @@ class MainActivity : AppCompatActivity() {
     //this new
     //new dev
 //另外地方增加的
+//base test
 }
 
