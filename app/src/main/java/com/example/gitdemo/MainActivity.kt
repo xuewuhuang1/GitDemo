@@ -38,5 +38,6 @@ class MainActivity : AppCompatActivity() {
 //另外地方增加的
 //base tset
 //basexiugai
+//7yue
 }
 
